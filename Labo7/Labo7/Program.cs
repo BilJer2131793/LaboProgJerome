@@ -30,8 +30,6 @@ namespace Labo7
 
             Console.ReadLine();
         }
-
-
         static public double RentreNombre()
         {
             double i = 0;
