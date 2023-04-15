@@ -124,43 +124,6 @@ namespace ConsoleApp1
             tabB = new Batiment[n];
             tabB = listR[0].remettreInfo();
         }
-        public void CreationDesRobots()//reverifier
-        {
-            int cmptR = 0;
-            int cmptD = 0;
-            int cmptM = 0;
-            foreach (Batiment b in tabB)
-            {
-                if (b.statut.Humanize() == Statut.reparation.Humanize())
-                {
-                    cmptR += 1;
-                    cmptM += b.Resource;
-                }
-                if (b.statut == Statut.demoli)
-                {
-                    cmptD += 1;
-                    cmptM += b.Resource;
-                }
-            }
-            if (cmptR / 2 > 1)
-                cmptR /= 2;
-            if (cmptD / 2 > 1)
-                cmptD /= 2;
-
-            for (int i = 0; i < cmptR; i++)
-            {
-                usine.CreeRobot(new Construction());
-            }
-            for (int i = 0; i < cmptD; i++)
-            {
-                usine.CreeRobot(new Destruction());
-            }
-            for (int i = 0; i < cmptM / 50; i++)
-            {
-                usine.CreeRobot(new Transport());
-            }
-
-        }
         public void ChoixAction()
         {
             bool fini = false;
@@ -175,7 +138,6 @@ namespace ConsoleApp1
             if (CheckFiniPrio())
                 NumPriorite -= 1;
         }
-
         public void ActionBatiment(int i)
         {
             int r = 0;

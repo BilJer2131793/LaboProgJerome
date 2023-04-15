@@ -8,11 +8,26 @@ namespace Les_films
 {
     partial class Film
     {
-        string Titre { get; set; }
-        string Directeur { get; set; }
-        int Annee { get; set; }
+        public string Titre { get; set; }
+        public string Directeur { get; set; }
+        public int Annee { get; set; }
         List<string> Acteurs { get; set; }
 
 
+        public Film(string titre, string directeur, int annee)
+        {
+            this.Titre = titre;
+            this.Directeur = directeur;
+            this.Annee = annee;
+        }
+        public Film()
+        {
+            Console.WriteLine("Titre de film");
+            Titre = Console.ReadLine();
+            Console.WriteLine("Nom du directeur");
+            Directeur = Console.ReadLine();
+            Console.WriteLine("Annee de creation");
+            Annee = Convert.ToInt32(Console.ReadLine());
+        }
     }
 }

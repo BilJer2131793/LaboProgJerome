@@ -14,12 +14,16 @@ namespace Labo7
             double reponse = 0;
             try
             {
+                if (x == 0 || y == 0)
+                {
+                    throw new DivideByZeroException();
+                }
                 reponse = x / y;
+
             }
             catch(DivideByZeroException ex)
             {
-                Console.WriteLine("Erreur!");
-                Console.WriteLine(ex.Message);
+                reponse = y;
             }
             return reponse;
         }
